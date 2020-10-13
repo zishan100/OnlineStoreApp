@@ -1,0 +1,45 @@
+<%- include('../include/head');-%>
+ <link rel="stylesheet" href="/css/cart.css">   
+ </head>
+ <body>
+     <%-include('../include/navbarnew')%>
+ <main class="main">
+     
+    <div class="cart-main">
+      <h3>Cart Item With Quantity</h3>    
+        <%if(CartProduct.length>0){%>
+          
+             <%CartProduct.forEach(cartproduct=>{%>
+             <%if(cartproduct.productId!==null){%> 
+             <div class="cart-item">
+
+             <p class="title"><%=cartproduct.productId.title%> </p>
+             <p class="quantity">Quantity:<%=cartproduct.quantity%></p>
+             <form action="/DeleteCart" class="delete" method="POST">
+              <input type="hidden" name="_csrf" value="<%=csrfTokens%>" />
+ 
+              <input type="hidden" name="ProdId" value="<%=cartproduct.productId._id%>">
+              <button type="submit" class="submit-button">Delete</button>
+            </form> 
+             </div>
+             
+              <%}%>  
+            <%})%>
+            <div class="checkout-container">
+                <!-- <form action="/checkout" method="POST">
+                   <input type="hidden" name="_csrf" value="<%=csrfTokens%>" />
+
+                    <button type="submit" class="Checkout-button">checkout</button>
+                </form>      -->
+              <a href="/checkouts" class="Checkout-button">
+                  checkout </a> 
+             </div> 
+            <%}else{%>
+           <h1 class="no-items">No Product in Cart</h1>  
+         <%}%>
+        
+
+  </div>     
+</main>  
+
+<%-include('../include/end')%>

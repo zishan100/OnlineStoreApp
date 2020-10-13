@@ -1,0 +1,90 @@
+main {
+  position: relative;
+  top: 90px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.message-container {
+  width: 40%;
+  margin: 0.5rem auto;
+
+  background-color: rgb(238, 148, 148);
+  color: red;
+  height: 50px;
+  text-align: center;
+  border: 0.1rem solid gainsboro;
+  border-radius: 0.2rem;
+}
+.message-container p {
+  margin-top: 0.8rem;
+}
+.form {
+  width: 300px;
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+/* Input Container*/
+.input-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0.4rem 0rem;
+}
+span {
+  text-align: left;
+  width: 100%;
+}
+.take-input {
+  align-self: center;
+  width: 100%;
+  border-style: none;
+
+  border: 1px solid rgba(10, 153, 34, 0.836);
+  line-height: 2;
+}
+.invalid {
+  border: 1px solid red !important;
+}
+/*submit button*/
+
+.submit-button {
+  margin: 0.7rem 0;
+  width: 74px;
+  height: 35px;
+  /* padding: .6rem .4rem; */
+  border-style: none;
+  border-radius: 1rem;
+  font-weight: bold;
+  font-size:15px;
+  border: 1px solid rgba(10, 153, 34, 0.836);
+}
+.login{
+ text-decoration: underline;
+ 
+}
+.submit-button:hover {
+  background-color: rgba(10, 153, 34, 0.836);
+}
+/*Using Media Queries to Make Page Responsive*/
+@media screen and (max-width:420px){
+  .message-container{
+    width:74%; 
+  }
+
+}
+
+@media screen and (max-width:400px){
+  .form{
+    width:80%;
+
+  }  
+  h1{
+   font-size:20px; 
+  }
+
+}

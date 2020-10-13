@@ -1,0 +1,68 @@
+<header class="header">
+  <nav class="nav-bar">
+    <ul>
+      <li>
+        <a href="/" class="nav-option <%= path==='/' ? 'active':''%>">shop</a>
+      </li>
+      <li>
+        <a
+          href="/product"
+          class="nav-option <%= path==='/product' ? 'active':''%>"
+          >product</a
+        >
+      </li>
+
+      <%if(isAuthenticate){%>
+      <li>
+        <a href="/cart" class="nav-option <%= path==='/cart' ? 'active':''%>"
+          >cart</a
+        >
+      </li>
+      <li>
+        <a href="/order" class="nav-option <%= path==='/order' ? 'active':''%>"
+          >order</a
+        >
+      </li>
+      <li>
+        <a
+          href="/admin/add-product"
+          class="nav-option <%= path==='/admin/add-product' ? 'active':''%>"
+          >Add Product</a
+        >
+      </li>
+      <li>
+        <a
+          href="/admin/product"
+          class="nav-option <%= path==='/admin/product' ? 'active':''%>"
+          >Admin Product</a
+        >
+      </li>
+      <%}%>
+    </ul>
+
+    <ul>
+      <%if(!isAuthenticate){%>
+      <li>
+        <a href="/login" class="nav-option <%= path==='/login' ? 'active':''%>"
+          >login</a
+        >
+      </li>
+      <li>
+        <a
+          href="/signup"
+          class="nav-option <%= path==='/signup' ? 'active':''%>"
+          >signup</a
+        >
+      </li>
+      <%}else{%>
+      <li>
+        <form action="/logout" method="POST" class="logoutform">
+          <input type="hidden" name="_csrf" value="<%=csrfTokens%>" />
+          <input type="submit" value="logout" class="submitbutton" />
+          <!-- <button type="submit" class="submit-button">logout</button> -->
+        </form>
+      </li>
+      <%}%>
+    </ul>
+  </nav>
+</header>

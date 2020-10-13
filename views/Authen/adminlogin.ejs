@@ -1,0 +1,34 @@
+<%- include('../include/head');-%>
+<link rel="stylesheet" href="/css/login.css" />  
+</head>
+<body>
+<%-include('../include/navbarnew')%>
+<!-- <%-include('../include/alertmsg')%>  -->
+
+
+<main class="main">
+<h1>Admin Login</h1>
+<%if(alertmsg){%>
+<div class="message-container">
+ <p class="error-msg"><%=alertmsg%></p>
+</div>   
+<%}%>
+
+<form action="/admin-login" class="form" method="POST" validate>
+
+<div class="input-container">
+ <span>Email:</span>
+ <input type="email" name="email" value="<%=userinput.email%>" class="take-input" />
+</div>
+<div class="input-container">
+ <span>Password</span>
+ <input type="password" name="password"   value="<%=userinput.password%>" class="take-input" />
+</div>
+<input type="hidden" name="_csrf" value="<%=csrfTokens%>">
+<button type="submit" class="submit-button">Login</button>
+<p class="Login-Link"> Don't Have an Admin Account Click on <a class="login" href="/admin-signup">Admin SignUp</a> </p>
+</form>
+ </main>   
+
+<%-include('../include/end')%>
+

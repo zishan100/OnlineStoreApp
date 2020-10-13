@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+nav {
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+}
+/* main nav */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 0px 10px 4px #888888;
+  background-color: white;
+}
+.nav-header img {
+  width: 110px;
+  line-height: 100px;
+}
+.middle {
+  list-style: none;
+  display: flex;
+  text-transform: uppercase;
+  align-items: center;
+}
+.middle li {
+  font-size: 1rem;
+  padding: 0.4rem 0.9rem;
+}
+
+.right-menu {
+  /* width: 100%; */
+  display: flex;
+}
+.right {
+  list-style: none;
+  display: flex;
+
+  align-items: center;
+  text-transform: uppercase;
+}
+.right li {
+  font-size: 1rem;
+  padding: 0.4rem 0.9rem;
+}
+
+.navmenu {
+  background-color: rgb(180, 229, 238);
+  width: 100%;
+  position: absolute;
+  left: 0;
+  height: 0;
+  overflow: hidden;
+  display: none;
+  transition: all 2s ease;
+  color: white;
+  z-index: 3;
+}
+.navbar-collapse {
+  height: 24rem;
+}
+
+.middle-nav,
+.right-nav {
+  list-style: none;
+}
+
+.middle-nav li {
+  width: 100%;
+  display: block;
+  line-height: 2;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+
+  transition: all 1s ease;
+  /* margin: 0.6rem 0; */
+}
+.right-nav li {
+  line-height: 2;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+.navmenu li:hover {
+  transition: 0.6s;
+  box-shadow: 0px 0px 6px 4px #888888;
+}
+
+a {
+  text-decoration: none;
+  color: grey;
+}
+a:active,
+a.active {
+  color: yellow;
+}
+/* nav-bar Design */
+label .fa-bars {
+  font-size: 2.5rem;
+  margin: 1rem 1rem 0 0;
+  display: none;
+  cursor: pointer;
+}
+
+.logout {
+  padding: 2px 10px;
+  border-style: none;
+  margin: 1.6rem 0.8rem 0 0;
+  color: grey;
+  
+  font-weight: 400;
+  font-size: 1.2rem;
+  background: transparent; 
+  /* display: none; */
+  cursor:pointer;
+}
+.logouts {
+  text-align: left;
+  display: block;
+  width: 100%;
+  border-style: none;
+  font-size: 1.4rem;
+  /* font-weight: 400; */
+  color: grey;
+  background-color: transparent;
+  line-height: 1.8;
+  text-transform: uppercase;
+  /* display: none; */
+}
+.logouts:hover {
+  display: block;
+  transition: 0.6s;
+  box-shadow: 0px 0px 6px 4px #888888;
+}
+.error {
+  position: relative;
+  top: 80px;
+}
+/* Media Queries */
+@media screen and (max-width: 800px) {
+  .middle {
+    display: none;
+  }
+  .right {
+    display: none;
+  }
+  label .fa-bars {
+    display: block;
+  }
+  .navmenu {
+    display: block;
+  }
+  .logout {
+    display: none;
+  }
+}

@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.topnav {
+  background-color: black;
+  overflow: hidden;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  text-decoration: none;
+  font-size: 1.5rem;
+  padding: 14px 16px;
+}
+.topnav .float-right {
+  display: block;
+  float: right;
+  text-decoration: none;
+  font-size: 1.5rem;
+  padding: 14px 26px;
+}
+
+.topnav a:hover {
+  background-color: whitesmoke;
+  color: black;
+}
+.topnav .icon-right {
+  display: none;
+}

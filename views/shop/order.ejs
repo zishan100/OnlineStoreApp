@@ -1,0 +1,46 @@
+<%- include('../include/head');-%>
+ <link rel="stylesheet" href="/css/order.css">   
+ </head>
+ <body>
+     <%-include('../include/navbarnew')%>
+ <main class="main">
+    <div class="main-order">
+       
+    <div class="order-main">
+         <div class="order-heading">
+              <h1>My Order</h1>
+         </div>
+        <%if(order.length>0 ){%>
+           
+         <%order.forEach((order)=>{%>
+              
+        <div class="order-container">
+            <div class="order-id">
+
+                  <p class="orderid">OrderID:<%=order._id%></p>  
+                  <p class="Invoice-link"><a href="order/<%=order._id%>" target="_blank" >Invoice</a></p> 
+            </div>
+           
+          <%order.products.forEach(products=>{%>
+              <div class="order-content">
+
+                <p class="title"><%=products.product.title%>(<%=products.quantity%>)</p>
+                <p class="price"> <%=products.product.price%></p>
+                
+                   
+             </div>
+                 
+            <%});%>  
+                 
+        </div>
+        <%});%>
+        <%}else{%>   
+         <h1>No Order Placed</h1>       
+       <%}%>                
+
+  </div>
+    </div>
+         
+</main>  
+
+<%-include('../include/end')%>

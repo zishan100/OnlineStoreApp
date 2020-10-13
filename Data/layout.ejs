@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%=pageTitle%></title>
+
+    <link rel="stylesheet" href="/css/main.css" />
+    <!-- <link rel="stylesheet" href="/css/shop.css" /> -->
+  </head>
+  <body>
+    <%- include('./include/header');-%>
+    <!-- <main class="main"> -->
+    <div id="main-container">
+      <%- body; %>
+    </div>
+
+    <!-- <form action="/admin/product" class="form" method="POST">
+        <div class="input-container">
+          <span>Item</span>
+          <input type="text" name="title" class="take-input" />
+        </div>
+
+        <button type="submit" class="submit-button">Add Product</button>
+      </form> -->
+    <!-- </main> -->
+    <%- include('./include/footer'); -%>
+  </body>
+</html>

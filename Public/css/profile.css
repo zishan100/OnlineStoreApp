@@ -1,0 +1,113 @@
+.profile-main {
+  position: relative;
+  top: 90px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-transform: capitalize;
+  width:350px;
+  box-shadow: 0px 0px 5px 3px #888888;
+}
+.edit-information h1 {
+  text-align: center;
+  margin: 2rem 0;
+}
+.edit-container {
+  display: flex;
+  justify-content: space-between;
+}
+.upload-file {
+  margin-left: 0.7rem;
+  align-self: flex-end;
+}
+/* input[type="file"] {
+  display: none;
+} */
+/* .profile-label {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+} */
+.profilelogo {
+  height: 150px;
+  width: 150px;
+}
+/*Account Information*/
+
+.account-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 15vh;
+  width: 65%;
+}
+.account-container {
+  display: flex;
+}
+.account-container span {
+  width: 40%;
+}
+.account-container input {
+  width: 70%;
+
+  margin: 0.2rem 0rem;
+}
+/*Password Information*/
+.password-detail {
+  display: flex;
+  flex-direction: column;
+  font-size:13px;
+  width: 100%;
+}
+.password-container {
+  display: flex;
+}
+.password-container span {
+  width: 40%;
+}
+.password-container input {
+  width: 60%;
+
+  margin: 0.2rem 0rem;
+}
+.submit-button {
+  margin: 2rem 0;
+}
+.submit {
+  padding: 0.4rem 0.3rem;
+  border-radius: 0.9rem;
+  border-style: none;
+  border: 2px solid grey;
+  align-self: flex-start;
+}
+.input-container {
+  display: flex;
+}
+.input-container span {
+  width: 40%;
+  align-self: center;
+}
+.input-container p {
+  width: 60%;
+}
+
+.submits {
+  text-align: left;
+
+  padding: 0.5rem 0.5rem;
+  border: 2px solid grey;
+  border-radius: 1rem;
+  text-decoration: none;
+  color: black;
+}
+
+/* @media screen and (max-width: 900px) {
+  .profile-main{
+    width:80%;
+  }
+  
+
+} */

@@ -1,0 +1,59 @@
+<%- include('../include/head');-%>
+ <link rel="stylesheet" href="/css/shop.css" />   
+ </head>
+ <body>
+ <%-include('../include/navbarnew')%>
+<main class="main">
+  <div class="main-container">
+     <%if(products.length>0){%> 
+      <%for(let product of products){%>
+    <div class="product-container">
+    <h1 class="product-heading"><%=product.title%></h1>
+    <div class="product-img">
+      <img
+        src="<%=product.imgurl%>"
+        alt="<%=product.title%>"
+        class="img-size img-style"
+      />
+    </div>
+    <div class="product-content">
+      <h3 class="center">$ <%=product.price%></h3>
+      <p>
+       <%=product.description%>
+     </p>
+      <form action="/cart" method="POST">
+        <input type="hidden" name="_csrf" value="<%=csrfTokens%>">          
+        <input type="hidden" name="productId" value="<%=product.id%>">
+        <button type="submit" class="add-cart">Add Cart</button>
+      </form>
+      </div>
+  </div>
+  <%}%> 
+  </div>
+   <div class="pagination-container">
+     <%if(currentPage!=1 && previousPage!=1){%>
+       <a href="/?page=1" class="link ">1</a>
+
+     <%}%>
+      
+      <%if(hasPreviousPage){%>
+        <a href="/?page=<%=previousPage%>" class="link "><%=previousPage%> </a>
+      <%}%>
+      <a href="/?page=<%=currentPage%>" class="link active"><%=currentPage%></a>
+      <%if(hasNextPage){%>
+       <a href="/?page=<%=nextPage%>" class="link "><%=nextPage%></a>
+      <%}%>
+      <%if(currentPage!=lastPage && nextPage!=lastPage){%>
+        <a href="/?page=<%=lastPage%>" class="link "><%=lastPage%></a> 
+        <%}%>
+       
+
+ 
+   </div>
+  <%}else{%>
+  <h1 class="no-items">No Product Found</h1>
+  <%}%>
+  
+  </main>
+    
+<%-include('../include/end')%>

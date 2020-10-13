@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Signika&display=swap");
+.main {
+  width: 100%;
+}
+
+.cart-main {
+  display: flex;
+  
+  align-items: center;
+  flex-direction: column;
+ 
+}
+h3{
+  margin-top:5.5rem;  
+  text-transform: capitalize;
+  font-size:25px;
+}
+.cart-main div:nth-child(1) {
+  width:400px;
+  display: flex;
+  min-height: 60px;
+  /* justify-content: center; */
+  align-items: center;
+  margin-top: 6rem;
+  box-shadow: 1px 5px 10px 4px #888888;
+  border-radius: 0.4rem;
+}
+.cart-item {
+  width:400px;
+  display: flex;
+  min-height: 60px;
+  /* justify-content: center; */
+  align-items: center;
+  margin: 1.2rem 0rem;
+  box-shadow: 1px 5px 10px 4px #888888;
+  border-radius: 0.4rem;
+
+}
+.title {
+  text-align: center;
+  width: 30%;
+}
+
+.quantity {
+  text-align: center;
+  width: 40%;
+}
+.delete {
+  text-align: center;
+  width: 30%;
+}
+
+.no-items {
+  margin-top: 7rem;
+}
+
+/* Submit Button */
+.submit-button {
+  padding: 0.5rem 0.8rem;
+  border-style: none;
+  border: 1px solid rgb(247, 87, 87);
+  background-color: whitesmoke;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+/* CheckOut Cart Button*/
+.checkout-container {
+  margin-top: 1.4rem;
+  
+  font-size:20px;
+  font-weight: bold;
+  text-transform: capitalize;
+  
+}
+
+.Checkout-button {
+  background-color: whitesmoke;
+  /* width: 40px;
+  height: 40px; */
+  border: 1px solid rgba(10, 153, 34, 0.836);
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+   
+  text-decoration: none;
+  color: black;
+}
+.submit-button:hover{
+  background-color:rgb(247, 87, 87);
+}
+.Checkout-button:hover {
+  background-color: rgba(10, 153, 34, 0.836);
+}
+.payment-container {
+  margin-top: 10px;
+}
+/* Media Queries to Make Responsive WebSite*/
+
+@media screen and (max-width: 440px) {
+  .cart-main div:nth-child(1){
+    width:95%; 
+  }
+  .cart-item{
+    width:95%;
+  }
+     
+  h3{
+    font-size:20px;
+  }   
+
+}
+
+
+

@@ -1,0 +1,71 @@
+<%- include('../include/head');-%>
+     <link rel="stylesheet" href="/css/profile.css" />  
+ </head>
+ <body>
+ 
+  <%-include('../include/navbarnew')%>
+   <form action="/editprofile" method="POST" enctype="multipart/form-data">
+        
+      <div class="profile-main">
+        <div class="edit-information">
+          <h1>edit information</h1>
+          <div class="edit-container">
+            
+            <div class="upload-file">
+              <label for="file-upload" class="profile-label"
+                >Upload File:
+            </label>
+              <input
+                type="file"
+                id="file-upload"
+                name="image"
+                class="profile"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="account-information">
+          <div class="account-heading">
+            <h1>account information</h1>
+          </div>
+          <div class="account-detail">
+            <div class="account-container">
+              <span>first name:</span>
+              <input type="text" name="first" value="<%=user.username.first%>"/>
+            </div>
+            <div class="account-container">
+              <span>last name:</span>
+              <input type="text" name="last" value="<%=user.username.last%>"/>
+            </div>
+            <div class="account-container">
+              <span>Email Address:</span>
+              <input type="email" name="email" value="<%=user.email%>"/>
+            </div>
+          </div>
+        </div>
+        <div class="change-password">
+          <div class="password-heading">
+            <h1>change password</h1>
+          </div>
+          <div class="password-detail">
+            <div class="password-container">
+              <span>current password:</span>
+              <input type="password" name="currentpassword" />
+            </div>
+            <div class="password-container">
+              <span>new password:</span>
+              <input type="password" name="newpassword" />
+            </div>
+            <div class="password-container">
+              <span>conform password:</span>
+              <input type="password" name="conformpassword" />
+            </div>
+          </div>
+        </div>
+        <div class="submit-button">
+          <input type="hidden" name="_csrf" value="<%=csrfTokens%>">
+          <button type="submit" class="submit">updated profile</button>
+        </div>
+      </div>
+    </form>
+  <%-include('../include/end')%> 

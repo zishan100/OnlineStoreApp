@@ -1,0 +1,43 @@
+ <%- include('../include/head');-%>
+     <link rel="stylesheet" href="/css/addPrroduct.css" /> 
+     
+ </head>
+ <body>
+ <%-include('../include/navbarnew')%>
+  
+
+   
+<main class="main">
+   <div class="form-container">
+      <form action="/admin/<%if(editModal){%>editproduct<%}else{%>product<%}%>" class="form" method="POST"  enctype="multipart/form-data">
+    <%-include('../include/alertmsg')%>
+    <div class="input-container">
+      <span>Title</span>
+      <input type="text" name="title" class="take-input" value="<%if(editModal){%><%=product.title%><%}%>"/>
+    </div>
+    
+    <div class="input-container">
+      <span>Image</span>
+      <input type="file" name="image" class="take-input" />
+    </div>
+     
+    <div class="input-container">
+      <span>Price</span>
+      <input type="number" name="price" class="take-input" step="0.01" value="<%if(editModal){%><%=product.price%><%}%>"/>
+    </div>
+    <div class="input-container">
+      <span>Description</span>
+      <textarea name="description" id="Description"  rows="5" class="take-input"  ><%if(editModal){%><%=product.description%> <%}%></textarea>
+      
+    </div>
+    <input type="hidden" name="ProdId" value="<%if(editModal){%><%=product.id%><%}%>">
+    <input type="hidden" name="_csrf" value="<%=csrfTokens%>" />
+
+    <button type="submit" class="submit-button"><%if(editModal){%>Update Product <%}else{%> Add Product<%}%></button>
+  </form>
+   </div>
+  
+</main>   
+
+<%-include('../include/end')%>
+

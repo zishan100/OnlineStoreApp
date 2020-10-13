@@ -1,0 +1,34 @@
+ <%- include('../include/head');-%>
+  <link rel="stylesheet" href="/css/product.css">  
+ </head>
+ <body>
+ <%-include('../include/navbarnew')%>
+<main class="main-product">
+   <div class="product-container">
+    <h1 class="product-heading"><%=product.title%></h1>
+    
+    <div class="product-img">
+      <img
+        src="/img/<%=product.imgurl%>"
+        alt="<%=product.title%>"
+        class="img-size img-style"
+      />
+    </div>
+    <div class="product-content">
+      <h3 class="center">$ <%=product.price%></h3>
+      <p>
+       <%=product.description%>
+     </p>
+      <form action="/cart" method="POST">
+        <input type="hidden" name="_csrf" value="<%=csrfTokens%>" />
+
+       <button type="submit" class="add-cart">Add Cart</button>
+       <input type="hidden" name="productId" value="<%=product.id%>">
+
+     </form>
+      
+    </div>
+  </div> 
+
+</main>
+ <%-include('../include/end')%>

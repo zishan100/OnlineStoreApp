@@ -1,0 +1,48 @@
+<%- include('../include/head');-%>
+ <link rel="stylesheet" href="/css/cart.css">   
+ </head>
+ <body>
+     <%-include('../include/navbarnew')%>
+ <main class="main">
+      <div class="cart-main">
+        <%if(product.length>0){%>
+          
+             <%product.forEach(product=>{%>
+              
+             <div class="cart-item">
+
+             <p class="title"><%=product.productId.title%> </p>
+             <p class="quantity">Quantity:<%=product.quantity%></p>
+             <p class="quantity">Price:<%=product.productId.price*product.quantity%></p>
+
+
+             </div>
+             
+               
+            <%})%>
+             <%}%>  
+            <div class="checkout-container">
+               <p>total:<%=total%></p>  
+               
+            </div> 
+           <div class="payment-container">
+            <button id="order-id" class="Checkout-button">Order</button>    
+             <script src="https://js.stripe.com/v3/">
+            </script>
+            <script>
+                let stripe = Stripe('pk_test_51H07jwGJ39NqQOUFGEm4GiRJ9F1ZjZTdxcl82DhHNiSlHXzjYw3l7xoLAPCU6znwGGbWUc7WcWGkzJ1wbWYpGVT100VccWlWka');
+               let orderbtn=document.getElementById('order-id');
+               orderbtn.addEventListener('click',function(){
+                stripe.redirectToCheckout({
+                   sessionId:'<%=sessionId%>' 
+                })   
+               }) 
+            </script>
+          </div>            
+          
+
+  </div>
+         
+</main>  
+
+<%-include('../include/end')%>

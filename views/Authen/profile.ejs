@@ -1,0 +1,56 @@
+<%- include('../include/head');-%>
+     <link rel="stylesheet" href="/css/profile.css" />  
+ </head>
+ <body>
+ <%-include('../include/navbarnew')%>
+    <div class="profile-main">
+     <%if(alertmsg){%>
+      <div class="message-container">
+       <p class="error-msg"><%=alertmsg%></p>
+     </div>   
+     <%}%>
+
+      <div class="edit-information">
+        <h1>user profile</h1>
+        <div class="edit-container">
+          <div class="image">
+            <img
+              src="<%=user.profileimg%>"
+              alt="image"
+              class="profilelogo"
+            />
+          </div>
+        </div>
+      </div>
+       <%if(user){%>
+        <div class="account-information">
+        <div class="account-heading">
+          <h1>account information</h1>
+        </div>
+        <div class="account-detail">
+          
+          <div class="input-container">
+            <span>first name:</span>
+            <p><%=user.username.first%></p>
+          </div>
+          <div class="input-container">
+            <span>last name:</span>
+            <p><%=user.username.last%></p>
+          </div>
+          
+          
+           <div class="input-container">
+            <span>Email Address:</span>
+            <p><%=user.email%></p>
+          </div>
+        </div>
+      </div>  
+       <%}%>
+      
+       
+      <div class="submit-button">
+        <a href="/editprofile/<%=user._id%>" class="submit">edit profile</a>
+      </div>
+      
+    </div>
+ <%-include('../include/end')%> 

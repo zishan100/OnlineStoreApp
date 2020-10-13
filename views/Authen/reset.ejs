@@ -1,0 +1,30 @@
+ <%- include('../include/head');-%>
+     <link rel="stylesheet" href="/css/login.css" />  
+ </head>
+ <body>
+ <%-include('../include/navbarnew')%>
+  <!-- <%-include('../include/alertmsg')%>  -->
+
+   
+<main class="main">
+   <h1>Reset Password</h1>
+   <%if(alertmsg){%>
+     <div class="message-container">
+      <p class="error-msg"><%=alertmsg%></p>
+   </div>   
+      <%}%>
+    
+  <form action="/reset" class="form" method="POST">
+    
+    <div class="input-container">
+      <span>Email:</span>
+      <input type="email" name="email" class="take-input" />
+    </div>
+    
+     <input type="hidden" name="_csrf" value="<%=csrfTokens%>">
+    <button type="submit" class="submit-button">Reset</button>
+  </form>
+</main>   
+
+<%-include('../include/end')%>
+

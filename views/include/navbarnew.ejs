@@ -1,0 +1,142 @@
+<nav>
+  <div class="nav">
+    <div class="nav-header %>">
+      <a href="/" class="<%= path==='/' ? 'active':''%>">
+        <img src="/img/Logo-img.jpg" class="logo" alt="logo" />
+      </a>
+    </div>
+         
+    <ul class="middle">
+      <%if(!isAdminAuthenticate){%>
+      <li>
+        <a href="/" class="<%= path==='/' ? 'active':''%>">Shop</a>
+      </li>
+      <li>
+        <a href="/product" class="<%= path==='/product' ? 'active':''%>"
+          >Product</a
+        >
+      </li>
+      <%}%>
+      <%if(isAuthenticate){%>
+      <li>
+        <a href="/cart" class="<%= path==='/cart' ? 'active':''%>">cart</a>
+      </li>
+      <li>
+        <a href="/order" class="<%= path==='/order' ? 'active':''%>">order</a>
+      </li>
+      <%}%>
+      <%if(isAdminAuthenticate){%>
+      <li>
+        <a
+          href="/admin/add-product"
+          class="<%= path==='/admin/add-product' ? 'active':''%>"
+          >Add Product</a
+        >
+      </li>
+      <li>
+        <a
+          href="/admin/product"
+          class="<%= path==='/admin/product' ? 'active':''%>"
+          >Admin Product</a
+        >
+      </li>
+      <%}%>
+    </ul>
+    <div class="right-menu">
+      <%if(!isGlobalAuthenticate ){%>
+      <ul class="right">
+        <li>
+          <a href="/admin-login" class="<%= path==='/admin-login' ? 'active':''%>"
+            >Admin-Login</a
+          >
+        </li>
+        <li>
+          <a href="/login" class="<%= path==='/login' ? 'active':''%>"
+            >User-Login</a
+          >
+        </li>
+        
+      </ul>
+      <%}else{%>
+      <ul class="right">
+        <a href="/profile" class="<%= path==='/profile' ? 'active':''%>"
+          >Profile</a
+        >
+      </ul>
+      <form action="/logout" method="POST" class="logout-form">
+        <input type="hidden" name="_csrf" value="<%=csrfTokens%>" />
+        <button type="submit" class="logout">Logout</button>
+      </form>
+      <%}%>
+        
+      <div class="icon">
+        <label>
+          <i class="fas fa-bars"></i>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="navmenu">
+    <ul class="middle-nav">
+      <%if(!isAdminAuthenticate){%>
+       <li>
+        <a href="/" class="<%= path==='/' ? 'active':''%>">Shop</a>
+      </li>
+       <li>
+        <a href="/product" class="<%= path==='/product' ? 'active':''%>"
+          >Product</a
+        >
+       </li>
+      <%}%>
+      <%if(isAuthenticate){%>
+      <li>
+        <a href="/cart" class="<%= path==='/cart' ? 'active':''%>">cart</a>
+      </li>
+      <li>
+        <a href="/order" class="<%= path==='/order' ? 'active':''%>">order</a>
+      </li>
+      <%}%>
+      <%if(isAdminAuthenticate){%>
+      <li>
+        <a
+          href="/admin/add-product"
+          class="<%= path==='/admin/add-product' ? 'active':''%>"
+          >Add Product</a
+        >
+      </li>
+      <li>
+        <a
+          href="/admin/product"
+          class="<%= path==='/admin/product' ? 'active':''%>"
+          >Admin Product</a
+        >
+      </li>
+      <%}%>
+    </ul>
+    <%if(!isGlobalAuthenticate){%>
+    <ul class="right-nav">
+      <li>
+        <a href="/admin-login" class="<%= path==='/admin-login' ? 'active':''%>">Admin-Login</a>
+      </li>
+      <li>
+        <a href="/login" class="<%= path==='/login' ? 'active':''%>"
+          >User-Login</a
+        >
+      </li>
+    </ul>
+    <%}else{%>
+    <ul class="right-nav">
+      <li>
+        <a href="/profile" class="<%= path==='/profile' ? 'active':''%>"
+          >Profile</a
+        >
+      </li>
+    </ul>
+    <form action="/logout" method="POST">
+      <input type="hidden" name="_csrf" value="<%=csrfTokens%>" />
+      <button type="submit" class="logouts">Logout</button>
+    </form>
+    <%}%>
+  </div>
+</nav>
